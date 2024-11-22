@@ -1,59 +1,68 @@
 Sozluk Project
-Bu proje, modern yazılım geliştirme prensiplerini ve tekniklerini uygulayarak geliştirilmiş bir sözlük uygulamasıdır. Projede güçlü bir mimari yapı ve popüler yazılım geliştirme araçları kullanılmıştır.
+This project is a dictionary application developed by applying modern software development principles and techniques. It incorporates a robust architectural design and leverages popular software development tools and frameworks.
 
-🛠️ Kullanılan Teknolojiler ve Araçlar
-Mimari Yapı
-Onion Architecture: Katmanlı ve bağımsız bir yapı oluşturulmasını sağlar. Domain merkezlidir ve bağımlılıkları dışa doğru organize eder.
-CQRS (Command Query Responsibility Segregation): Veriyi sorgulama ve yazma işlemlerinin ayrıştırılması için uygulanmıştır.
-Event-Driven Architecture: Sistemdeki işlemler RabbitMQ aracılığıyla asenkron mesajlaşma yöntemiyle yürütülmüştür.
-Kullanılan Kütüphaneler ve Frameworkler
-Entity Framework Core: Veritabanı işlemleri için ORM aracı olarak kullanıldı.
-Dapper: Performans gerektiren noktalarda mikro ORM çözümü olarak tercih edildi.
-MediatR: CQRS ve mediator tasarım deseni için kullanıldı.
-AutoMapper: Nesne dönüşümleri için tercih edildi.
-FluentValidation: Girdi doğrulama işlemlerini kolaylaştırmak için kullanıldı.
-RabbitMQ: Event-driven yapı için asenkron mesajlaşma sistemi olarak kullanıldı.
-Veritabanı
-Microsoft SQL Server: Projede kullanılan ilişkisel veritabanı yönetim sistemi.
-Projeksiyonlar ve İşleyiciler
-Projeksiyonlar ve diğer işlemler, worker servisleri üzerinden işlenmiştir.
-RabbitMQ ile gelen mesajlar bu worker servisler tarafından dinlenir ve ilgili işlemler gerçekleştirilir.
-Programlama Dili
-C#: Proje tamamen C# diliyle yazılmıştır.
-🚀 Proje Özellikleri
-Kullanıcı Yönetimi: Kullanıcılar kayıt olabilir, giriş yapabilir ve profillerini yönetebilir.
-Entry ve Yorum Yönetimi: Kullanıcılar sözlük girdileri ve yorumları oluşturabilir.
-Oylama Sistemi: Entry ve yorumlar üzerinde oylama yapma özelliği.
-Asenkron İşlemler: RabbitMQ ile mesaj tabanlı iş akışları.
-Validation: Kullanıcı girişi ve veri doğrulama işlemleri FluentValidation ile kolaylaştırılmıştır.
-📂 Proje Yapısı
-Proje aşağıdaki katmanlardan oluşmaktadır:
+🛠️ Technologies and Tools Used
+Architectural Design
+Onion Architecture: Provides a layered and decoupled structure. It is domain-centric and organizes dependencies outward.
+CQRS (Command Query Responsibility Segregation): Separates read and write operations on the data for better scalability and maintainability.
+Event-Driven Architecture: Implements asynchronous messaging workflows using RabbitMQ.
+Libraries and Frameworks
+Entity Framework Core: Used as an ORM tool for database operations.
+Dapper: Selected as a micro ORM solution for performance-critical operations.
+MediatR: Facilitates CQRS and mediator design patterns.
+AutoMapper: Used for object-to-object mapping.
+FluentValidation: Simplifies input validation processes.
+RabbitMQ: Utilized as a messaging system for the event-driven architecture.
 
-API Katmanı: Kullanıcıların etkileşim kurduğu giriş noktası.
-Application Katmanı: İş kuralları ve CQRS pattern işlemlerinin yönetildiği katman.
-Domain Katmanı: Çekirdek iş mantığının bulunduğu katman.
-Infrastructure Katmanı: Veritabanı, RabbitMQ gibi dış kaynaklarla etkileşimi yöneten katman.
-🛠️ Kurulum ve Çalıştırma
-Kaynak kodu klonlayın:
+Database
+Microsoft SQL Server: The relational database management system used in the project.
+Projections and Handlers
+Projections and other operations are processed via worker services.
+Messages sent through RabbitMQ are consumed by these worker services to execute the corresponding tasks.
+Programming Language
+C#: The entire project is developed in C#.
+
+
+
+🚀 Features
+User Management: Allows users to register, log in, and manage their profiles.
+Entry and Comment Management: Enables users to create dictionary entries and comments.
+Voting System: Provides the ability to vote on entries and comments.
+Asynchronous Operations: Implements message-based workflows using RabbitMQ.
+Validation: Simplifies user input and data validation with FluentValidation.
+
+
+📂 Project Structure
+The project is structured into the following layers:
+
+API Layer: Entry point for user interactions.
+Application Layer: Manages business logic and CQRS operations.
+Domain Layer: Contains the core business logic.
+Infrastructure Layer: Manages external dependencies like the database and RabbitMQ.
+🛠️ Installation and Running
+Clone the repository:
 
 bash
-Kodu kopyala
-git clone https://github.com/Yusuftmle/Sozluk.git
-MS SQL veritabanı bağlantısını yapılandırın.
-appsettings.json dosyasındaki ConnectionStrings bölümünü düzenleyin.
 
-Proje bağımlılıklarını yükleyin:
+git clone https://github.com/Yusuftmle/Sozluk.git
+Configure the SQL Server database connection:
+Update the ConnectionStrings section in the appsettings.json file.
+
+Install project dependencies:
 
 bash
 Kodu kopyala
 dotnet restore
-RabbitMQ sunucusunu başlatın. RabbitMQ'nun sisteminizde kurulu ve çalışır durumda olduğundan emin olun.
+Start the RabbitMQ server:
+Ensure RabbitMQ is installed and running on your system.
 
-Uygulamayı çalıştırın:
+Run the application:
 
 bash
 Kodu kopyala
 dotnet run
-💡 Geliştirici Notları
-Proje, kolay genişletilebilir ve sürdürülebilir bir yapı sağlamak için SOLID prensiplerine uygun olarak tasarlanmıştır.
-CQRS ve Event-driven yapı ile birlikte Onion Architecture, iş mantığını bağımsız katmanlar halinde düzenlemeye olanak tanır.
+
+
+💡 Developer Notes
+The project is designed in adherence to SOLID principles to ensure easy extensibility and maintainability.
+The combination of CQRS, Event-driven architecture, and Onion Architecture provides a modular and scalable foundation for business logic separation.
