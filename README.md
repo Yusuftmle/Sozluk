@@ -42,7 +42,6 @@ Infrastructure Layer: Manages external dependencies like the database and Rabbit
 🛠️ Installation and Running
 Clone the repository:
 
-bash
 
 git clone https://github.com/Yusuftmle/Sozluk.git
 Configure the SQL Server database connection:
@@ -50,16 +49,13 @@ Update the ConnectionStrings section in the appsettings.json file.
 
 Install project dependencies:
 
-bash
-Kodu kopyala
+
 dotnet restore
 Start the RabbitMQ server:
 Ensure RabbitMQ is installed and running on your system.
 
 Run the application:
 
-bash
-Kodu kopyala
 dotnet run
 
 
