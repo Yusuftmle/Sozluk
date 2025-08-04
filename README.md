@@ -98,6 +98,8 @@ sequenceDiagram
 
 ### 🧠 CQRS Pattern
 
+### 🧠 CQRS Pattern
+
 ```mermaid
 graph LR
     A[Client Request] --> B{Command or Query?}
@@ -106,8 +108,6 @@ graph LR
     C --> DB[Write DB]
     D --> DB[Read DB]
 
-
----
 
 ## 🧪 Getting Started
 
