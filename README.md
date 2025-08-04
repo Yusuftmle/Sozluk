@@ -94,9 +94,7 @@ sequenceDiagram
 
 ---
 
-### 🧠 CQRS Pattern
 
-### 🧠 CQRS Pattern
 
 ### 🧠 CQRS Pattern
 
@@ -107,8 +105,8 @@ graph LR
     B --> D[Query Handler via MediatR]
     C --> DB[Write DB]
     D --> DB[Read DB]
-
-
+```
+---
 ## 🧪 Getting Started
 
 ### 🐘 Prerequisites
