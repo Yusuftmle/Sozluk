@@ -96,14 +96,16 @@ sequenceDiagram
 
 ### 🧠 CQRS Pattern
 
+### 🧠 CQRS Pattern
+
 ```mermaid
-graph TB
+graph LR
     A[Client Request] --> B{Command or Query?}
-    B -->|Command| C[Command Handler (via MediatR)]
-    B -->|Query| D[Query Handler (via MediatR)]
-    C --> DB[(Write DB)]
-    D --> DB[(Read DB)]
-```
+    B --> C[Command Handler via MediatR]
+    B --> D[Query Handler via MediatR]
+    C --> DB[Write DB]
+    D --> DB[Read DB]
+
 
 ---
 
