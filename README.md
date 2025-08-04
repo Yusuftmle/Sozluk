@@ -97,7 +97,7 @@ sequenceDiagram
 ### 🧠 CQRS Pattern
 
 ```mermaid
-graph LR
+graph TB
     A[Client Request] --> B{Command or Query?}
     B -->|Command| C[Command Handler (via MediatR)]
     B -->|Query| D[Query Handler (via MediatR)]
