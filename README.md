@@ -31,15 +31,7 @@ This is a modern dictionary (sozluk) application designed with clean architectur
 
 ---
 
-## 🚀 Features
 
-- ✅ User Registration and Authentication (Login)
-- ✅ Entry and Comment Management
-- ✅ Voting System for Entries and Comments
-- ✅ Asynchronous Event Handling via RabbitMQ
-- ✅ Input Validation with FluentValidation
-
----
 
 ## 📂 Project Structure
 
